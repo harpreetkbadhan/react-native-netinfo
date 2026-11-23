@@ -8,5 +8,12 @@
 	<uses-permission
 		android:name="android.permission.ACCESS_WIFI_STATE" />
 
+	<!-- ACCESS_WIFI_STATE implies a required android.hardware.wifi feature, which
+	     hides the app on Google Play from devices without wifi. The library works
+	     without wifi hardware (WifiManager is null-checked), so mark it optional. -->
+	<uses-feature
+		android:name="android.hardware.wifi"
+		android:required="false" />
+
 </manifest>
   
